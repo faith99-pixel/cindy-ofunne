@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 
 interface Project {
@@ -497,8 +496,8 @@ export default function ProjectDetail() {
               Ready to Discuss Similar Projects?
             </h2>
             <p className="text-lg text-white/85 mb-8 max-w-2xl mx-auto group-hover:text-white/95 transition-colors duration-300">
-              I'd love to explore how my experience can help with your
-              organization's transformation goals.
+              I&apos;d love to explore how my experience can help with your
+              organization&apos;s transformation goals.
             </p>
             <a
               href="mailto:cindyofunne@yahoo.com?subject=Project Discussion"

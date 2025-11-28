@@ -138,12 +138,7 @@ const projects: Project[] = [
 
 export default function Portfolio() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  const allTags = Array.from(
-    new Set(projects.flatMap((project) => project.tags))
-  ).sort();
 
   const filteredProjects = selectedTag
     ? projects.filter((project) => project.tags.includes(selectedTag))
@@ -152,7 +147,7 @@ export default function Portfolio() {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false);
+        setSelectedTag(null);
       }
     }
 
@@ -181,7 +176,7 @@ export default function Portfolio() {
                 My <span className="text-primary">Projects</span>
               </h1>
               <p className="text-xl text-white max-w-3xl mx-auto">
-                From cloud migrations to enterprise transformations, explore how I've delivered measurable impact across industries.
+                From cloud migrations to enterprise transformations, explore how I&apos;ve delivered measurable impact across industries.
               </p>
             </div>
 

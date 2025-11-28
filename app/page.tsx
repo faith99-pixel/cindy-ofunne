@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -143,7 +142,7 @@ export default function Home() {
                   </li>
                   <li className="flex gap-3">
                     <span className="text-primary font-bold">→</span>
-                    <span><strong className="text-secondary">Book Author</strong> <span className="text-secondary">- "Mastering ERP Projects" guide</span></span>
+                    <span><strong className="text-secondary">Book Author</strong> <span className="text-secondary">- &quot;Mastering ERP Projects&quot; guide</span></span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-primary font-bold">→</span>
