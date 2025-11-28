@@ -38,7 +38,7 @@ export default function Navigation() {
               <span className="text-white font-bold text-sm">CO</span>
             </div>
             <span className="font-bold text-secondary hidden sm:inline group-hover:text-primary transition-colors">
-              Cindy
+              Cindy Ofunne
             </span>
           </Link>
 

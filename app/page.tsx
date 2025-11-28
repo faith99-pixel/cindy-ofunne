@@ -195,7 +195,7 @@ export default function Home() {
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-3xl sm:text-5xl font-bold mb-6">
               <span className="text-white">My Approach: The</span>{" "}
-              <span className="text-primary">DELIVERY Framework</span>
+              <span className="text-primary">DRIVE Framework</span>
             </h2>
             <p className="text-xl text-white max-w-3xl mx-auto">
               A proven methodology for transforming complex challenges into
@@ -212,16 +212,16 @@ export default function Home() {
                   "Establish clear scope, objectives, and success metrics through strategic planning and stakeholder alignment.",
               },
               {
-                letter: "E",
-                title: "Execute",
+                letter: "R",
+                title: "Refine",
                 description:
-                  "Deliver through meticulous planning, resource optimization, and agile methodology implementation.",
+                  "Iteratively optimize strategies, processes, and solutions through continuous feedback and improvement cycles.",
               },
               {
-                letter: "L",
-                title: "Lead",
+                letter: "I",
+                title: "Innovate",
                 description:
-                  "Guide teams with empathy, facilitate collaboration, and drive transformation across organizational silos.",
+                  "Implement digital transformation initiatives, cloud migration, and modern tools to enhance operational excellence.",
               },
             ].map((item, index) => (
               <div
@@ -247,16 +247,16 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                letter: "I",
-                title: "Innovate",
-                description:
-                  "Implement digital transformation initiatives, cloud migration, and modern tools to enhance operational excellence.",
-              },
-              {
                 letter: "V",
                 title: "Validate",
                 description:
                   "Ensure continuous quality, robust testing, and comprehensive risk management throughout project lifecycle.",
+              },
+              {
+                letter: "E",
+                title: "Execute",
+                description:
+                  "Deliver with precision through meticulous planning, resource optimization, and agile methodology implementation.",
               },
             ].map((item, index) => (
               <div
