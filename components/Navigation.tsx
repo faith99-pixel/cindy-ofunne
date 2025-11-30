@@ -100,32 +100,34 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-6 space-y-2 animate-fade-in-up border-t border-gray-200/50">
-            {[
-              { label: "About", href: "/" },
-              { label: "Projects", href: "/portfolio" },
-              { label: "Resume", href: "/resume" },
-            ].map((item, index) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`block px-4 py-3 rounded-lg transition-all duration-300 font-medium ${
-                  pathname === item.href
-                    ? "bg-primary/10 text-primary"
-                    : "text-secondary hover:bg-gray-100"
-                }`}
-                style={{
-                  animation: `slideDown 0.3s ease-out ${index * 50}ms backwards`,
-                }}
-              >
-                {item.label}
-              </Link>
-            ))}
+          <div className="md:hidden fixed left-0 top-16 w-full h-[calc(100vh-64px)] bg-white backdrop-blur-lg border-t border-gray-200 flex flex-col p-6 animate-fade-in-up z-40">
+            <div className="space-y-4 flex-1">
+              {[
+                { label: "About", href: "/" },
+                { label: "Projects", href: "/portfolio" },
+                { label: "Resume", href: "/resume" },
+              ].map((item, index) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`block px-6 py-4 rounded-lg transition-all duration-300 font-bold text-3xl ${
+                    pathname === item.href
+                      ? "bg-primary/10 text-primary"
+                      : "text-secondary hover:bg-gray-100"
+                  }`}
+                  style={{
+                    animation: `slideDown 0.4s ease-out ${index * 80}ms backwards`,
+                  }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
             <a
               href="mailto:cindyofunne@yahoo.com"
-              className="block px-4 py-3 bg-gradient-to-r from-primary to-orange-600 text-white rounded-2xl font-medium text-center hover:shadow-lg transition-all duration-300 mt-2"
+              className="block w-full px-6 py-4 bg-gradient-to-r from-primary to-orange-600 text-white rounded-2xl font-semibold text-center hover:shadow-lg transition-all duration-300 mb-20"
               style={{
-                animation: `slideDown 0.3s ease-out 150ms backwards`,
+                animation: `slideDown 0.4s ease-out 240ms backwards`,
               }}
             >
               Get in Touch

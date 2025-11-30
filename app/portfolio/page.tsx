@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface Project {
   id: number;
@@ -165,17 +166,17 @@ export default function Portfolio() {
       {/* Portfolio Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
         {/* Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50 z-0"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-secondary/40 via-transparent to-black/80 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 to-black/75 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90 z-0"></div>
         
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16 animate-fade-in-up">
-              <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6">
+              <h1 className="text-4xl sm:text-6xl font-bold text-white mb-6">
                 My <span className="text-primary">Projects</span>
               </h1>
-              <p className="text-xl text-white max-w-3xl mx-auto">
+              <p className="text-base sm:text-xl text-white max-w-3xl mx-auto">
                 From cloud migrations to enterprise transformations, explore how I&apos;ve delivered measurable impact across industries.
               </p>
             </div>
@@ -183,40 +184,56 @@ export default function Portfolio() {
 
 
             {/* Projects Grid - Simplified Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+              variants={{
+                hidden: {},
+                show: {
+                  transition: {
+                    staggerChildren: 0.15,
+                  },
+                },
+              }}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
               {filteredProjects.map((project, index) => (
-                <Link
+                <motion.div
                   key={project.id}
-                  href={`/portfolio/project/${project.id}`}
-                  className="group animate-fade-in-up"
-                  style={{
-                    animationDelay: `${index * 100}ms`,
+                  variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
                   }}
                 >
-                  <div className="backdrop-blur-md bg-white/20 border border-white/40 rounded-2xl p-6 hover:bg-white/25 hover:border-primary/60 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 h-full flex flex-col justify-between group-hover:scale-105">
+                  <Link
+                    href={`/portfolio/project/${project.id}`}
+                    className="group h-full block"
+                  >
+                  <div className="backdrop-blur-md bg-white/15 border border-white/30 rounded-2xl p-6 sm:p-8 hover:bg-white/25 hover:border-primary shadow-lg shadow-primary/20 transition-all duration-300 h-full flex flex-col justify-between group-hover:scale-105">
                     {/* Icon & Company */}
                     <div>
-                      <div className="text-4xl mb-3 transform group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300 animate-float">{project.icon}</div>
-                      <p className="text-sm font-semibold text-primary mb-1 group-hover:text-orange-300 transition-colors duration-300">
+                      <div className="text-5xl sm:text-6xl mb-3 transform group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300 animate-float">{project.icon}</div>
+                      <p className="text-sm sm:text-base font-semibold text-primary mb-2 group-hover:text-orange-300 transition-colors duration-300">
                         {project.company}
                       </p>
-                      <p className="text-xs text-white/90 font-medium mb-2">{project.role}</p>
-                      <p className="text-xs text-white/70">{project.period}</p>
+                      <p className="text-xs sm:text-sm text-white font-medium mb-2">{project.role}</p>
+                      <p className="text-xs sm:text-sm text-white">{project.period}</p>
                     </div>
 
                     {/* Title */}
-                    <div className="my-4">
-                      <h3 className="text-lg font-bold text-white mb-2 line-clamp-2 transition-colors duration-300 group-hover:text-primary">
+                    <div className="my-4 sm:my-6">
+                      <h3 className="text-lg sm:text-xl font-bold text-white mb-2 line-clamp-2 transition-colors duration-300 group-hover:text-primary">
                         {project.title}
                       </h3>
                     </div>
 
                     {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-3">
+                    <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.slice(0, 2).map((tag, tagIndex) => (
                         <span
                           key={tag}
-                          className="px-2 py-1 bg-primary/30 text-white text-xs font-medium rounded-full border border-primary/50 animate-scale-in transition-all hover:bg-primary/50"
+                          className="px-2 py-1 text-white text-xs sm:text-sm font-medium rounded-full border border-primary/20 animate-scale-in transition-all hover:border-primary/50"
                           style={{
                             animationDelay: `${tagIndex * 50}ms`,
                           }}
@@ -227,14 +244,15 @@ export default function Portfolio() {
                     </div>
 
                     {/* CTA */}
-                    <p className="text-sm font-semibold text-primary group-hover:text-orange-300 transition-all duration-300 flex items-center gap-2">
+                    <p className="text-sm sm:text-base font-semibold text-primary group-hover:text-orange-300 transition-all duration-300 flex items-center gap-2">
                       View Details
                       <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
                     </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
+                    </div>
+                    </Link>
+                    </motion.div>
+                    ))}
+                    </motion.div>
 
             {/* Empty State */}
             {filteredProjects.length === 0 && (
@@ -257,20 +275,20 @@ export default function Portfolio() {
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
         {/* Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50 z-0"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-secondary/40 via-transparent to-black/80 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 to-black/75 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90 z-0"></div>
         
         <div className="relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 animate-fade-in-up">
+            <h2 className="text-3xl sm:text-5xl font-bold text-white mb-6 animate-fade-in-up">
               Ready to Work Together?
             </h2>
-            <p className="text-xl text-white/95 mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+            <p className="text-base sm:text-xl text-white mb-8 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "100ms" }}>
               Let&rsquo;s discuss how my experience can help your organization succeed.
             </p>
             <a
               href="mailto:cindyofunne@yahoo.com"
-              className="inline-block px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 animate-fade-in-up"
+              className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 animate-fade-in-up"
               style={{ animationDelay: "200ms" }}
             >
               Schedule a Consultation

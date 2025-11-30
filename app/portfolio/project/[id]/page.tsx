@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 interface Project {
   id: number;
@@ -351,8 +352,8 @@ export default function ProjectDetail() {
       backgroundPosition: "center top",
     }}>
       {/* Background Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50 z-0"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/40 via-transparent to-black/80 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/80 to-black/75 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90 z-0"></div>
 
       <div className="relative z-10 pb-20 px-4 sm:px-6 lg:px-8">
         {/* Header with Back Button */}
@@ -370,14 +371,14 @@ export default function ProjectDetail() {
           <div className="mb-12 animate-fade-in-up">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
               <div>
-                <h1 className="text-2xl sm:text-5xl font-bold text-white mb-3">
+                <h1 className="text-2xl sm:text-5xl font-bold text-white mb-3 font-poppins">
                   {project.title}
                 </h1>
                 <p className="text-xl text-primary font-semibold">
                   {project.company}
                 </p>
               </div>
-              <div className="text-base sm:text-lg font-semibold text-white bg-primary/30 px-4 py-2 rounded-lg sm:whitespace-nowrap border border-primary/50 w-fit">
+              <div className="text-base sm:text-lg font-semibold text-white px-4 py-2 rounded-lg sm:whitespace-nowrap border border-primary/20 w-fit">
                 {project.period}
               </div>
             </div>
@@ -387,7 +388,7 @@ export default function ProjectDetail() {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 bg-primary/30 text-white rounded-full text-sm font-medium border border-primary/50"
+                  className="px-3 py-1 text-white rounded-full text-sm font-medium border border-primary/20"
                 >
                   {tag}
                 </span>
@@ -397,19 +398,32 @@ export default function ProjectDetail() {
 
           {/* Project Overview Section */}
           <section className="mb-12 animate-fade-in-up">
-            <h2 className="text-2xl font-bold text-white mb-6">Overview</h2>
-            <p className="text-lg text-white/90 leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 font-poppins">Overview</h2>
+            <p className="text-base sm:text-lg text-white leading-relaxed">
               {project.description}
             </p>
           </section>
 
           {/* Results Section - Visual Metrics */}
-          <section className="mb-12 animate-fade-in-up">
-            <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-2">
-              <span className="text-3xl animate-float">📊</span>
+          <section className="mb-12">
+            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-8 flex items-center gap-2 font-poppins">
+              <span className="text-2xl sm:text-4xl animate-float">📊</span>
               The Results
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <motion.div 
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+              variants={{
+                hidden: {},
+                show: {
+                  transition: {
+                    staggerChildren: 0.15,
+                  },
+                },
+              }}
+              initial="hidden"
+              whileInView="show"
+            viewport={{ once: true }}
+            >
               {project.results.map((result, index) => {
                 // Parse results to extract metrics and descriptions
                 const parts = result.split(':');
@@ -417,50 +431,53 @@ export default function ProjectDetail() {
                 const description = parts[1]?.trim() || '';
 
                 return (
-                  <div
+                  <motion.div
                     key={index}
-                    className="w-full p-4 bg-white/15 border border-white/30 rounded-xl hover:shadow-lg hover:shadow-primary/20"
-                    style={{
-                      animationDelay: `${index * 75}ms`,
+                    variants={{
+                      hidden: { opacity: 0, scale: 0.9 },
+                      show: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
                     }}
                   >
-                    <h3 className="text-primary font-bold text-base mb-3 tracking-wider hover:text-orange-300 transition-colors duration-300">
-                      {metric.split(/(\d+[%]?)/)[0]?.trim()}
+                    <div className="w-full p-6 backdrop-blur-md bg-white/15 border rounded-xl border-white/30 shadow-lg shadow-primary/20 hover:bg-white/25 hover:border-primary transition-all duration-300"
+                    >
+                    <h3 className="text-primary font-bold text-sm sm:text-base mb-3 tracking-wider transition-colors duration-300">
+                      {metric.split(/(\d+(?:,\d{3})*(?:\.\d+)?%?)/)[0]?.trim()}
                     </h3>
-                    <p className="text-2xl font-bold text-white mb-3 transform transition-transform duration-300">
-                      {metric.match(/\d+[%]?/)?.[0] || metric}
+                    <p className="text-xl sm:text-2xl font-bold text-white mb-3 transform transition-transform duration-300">
+                      {metric.match(/\d+(?:,\d{3})*(?:\.\d+)?%?/)?.[0] || metric}
                     </p>
-                    <p className="text-white/70 text-sm leading-relaxed hover:text-white/90 transition-colors duration-300">
+                    <p className="text-white text-base sm:text-base leading-relaxed  transition-colors duration-300">
                       {description || metric}
                     </p>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
+                    </div>
+                    </motion.div>
+                    );
+                    })}
+                    </motion.div>
+                    </section>
 
           {/* Approach & Solution Grid */}
           <div className="grid sm:grid-cols-2 gap-8 mb-12 animate-fade-in-up">
             {/* Approach Section */}
-            <section className="transition-transform duration-300 p-4">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
+            <section className="transition-transform duration-300 p-4 sm:p-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
                 <span className="w-3 h-3 bg-primary rounded-full animate-pulse-slow"></span>
                 Approach
               </h2>
-              <p className="text-white/90 leading-relaxed group-hover:text-white transition-colors duration-300">
+              <p className="text-white text-sm sm:text-base leading-relaxed group-hover:text-white transition-colors duration-300">
                 {project.approach}
               </p>
             </section>
 
             {/* Solution Section */}
-            <section className="transition-transform duration-300 p-4">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
+            <section className="transition-transform duration-300 p-4 sm:p-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
                 <span className="w-3 h-3 bg-primary rounded-full animate-pulse-slow"></span>
                 Solution
               </h2>
               <ul className="space-y-3">
                 {project.solution.map((item, i) => (
-                  <li key={i} className="text-white/90 flex gap-3 hover:text-white duration-300 group-hover:translate-x-2 transition-transform">
+                  <li key={i} className="text-white text-sm sm:text-base flex gap-3 hover:text-white duration-300 group-hover:translate-x-2 transition-transform">
                     <span className="text-primary font-bold flex-shrink-0 transform group-hover:scale-125 transition-transform duration-300">✓</span>
                     <span>{item}</span>
                   </li>
@@ -471,7 +488,7 @@ export default function ProjectDetail() {
 
           {/* Methodologies Section */}
           <section className="mb-12 animate-fade-in-up group">
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2 group-hover:text-primary transition-colors duration-300 font-poppins">
               <span className="w-3 h-3 bg-primary rounded-full animate-pulse-slow"></span>
               Methodologies Used
             </h2>
@@ -479,7 +496,7 @@ export default function ProjectDetail() {
               {project.methodologies.map((method, index) => (
                 <span
                   key={method}
-                  className="px-4 py-2 bg-primary/30 text-white rounded-lg font-medium border border-primary/50 animate-scale-in hover:bg-primary/50 hover:scale-110 transition-all duration-300"
+                  className="px-3 sm:px-4 py-2 text-white text-sm sm:text-base rounded-lg font-medium border border-primary/20 animate-scale-in hover:border-primary/50 hover:scale-110 transition-all duration-300"
                   style={{
                     animationDelay: `${index * 50}ms`,
                   }}
@@ -491,52 +508,68 @@ export default function ProjectDetail() {
           </section>
 
           {/* CTA Section */}
-          <section className="mt-16 p-8 sm:p-12 bg-white/10 border border-primary/30 rounded-xl text-white text-center animate-fade-in-up group hover:bg-white/15 hover:border-primary/60 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
-            <h2 className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
+          <section className="mt-16 p-6 sm:p-12 border rounded-xl text-white text-center animate-fade-in-up group hover:border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30">
+            <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 group-hover:text-primary transition-colors duration-300 font-poppins">
               Ready to Discuss Similar Projects?
             </h2>
-            <p className="text-lg text-white/85 mb-8 max-w-2xl mx-auto group-hover:text-white/95 transition-colors duration-300">
-              I&apos;d love to explore how my experience can help with your
-              organization&apos;s transformation goals.
+            <p className="text-base sm:text-lg text-white mb-6 sm:mb-8 max-w-2xl mx-auto group-hover:text-white transition-colors duration-300">
+              I&apos;d love to explore how my experience can help with your organization&apos;s transformation goals.
             </p>
             <a
               href="mailto:cindyofunne@yahoo.com?subject=Project Discussion"
-              className="inline-block px-8 py-4 bg-primary text-white hover:bg-orange-600 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/50 animate-float"
+              className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white text-sm sm:text-base hover:bg-orange-600 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/50 animate-float"
             >
               Schedule a Consultation
             </a>
           </section>
 
           {/* Related Projects */}
-          <section className="mt-16 animate-fade-in-up">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center animate-slide-up">
+          <section className="mt-16">
+            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-8 text-center font-poppins">
               Other Projects
             </h2>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <motion.div 
+              className="grid sm:grid-cols-2 gap-4"
+              variants={{
+                hidden: {},
+                show: {
+                  transition: {
+                    staggerChildren: 0.15,
+                  },
+                },
+              }}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
               {projects
                 .filter((p) => p.id !== projectId)
                 .slice(0, 3)
                 .map((relatedProject, index) => (
-                  <Link
+                  <motion.div
                     key={relatedProject.id}
-                    href={`/portfolio/project/${relatedProject.id}`}
-                    className="p-6 border-2 border-primary/30 rounded-lg hover:border-primary hover:bg-white/10 transition-all group animate-fade-in-up hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
-                    style={{
-                      animationDelay: `${(index + 1) * 100}ms`,
+                    variants={{
+                      hidden: { opacity: 0, x: -30 },
+                      show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
                     }}
                   >
-                    <h3 className="font-bold text-white group-hover:text-primary transition-colors line-clamp-2 mb-2">
+                    <Link
+                      href={`/portfolio/project/${relatedProject.id}`}
+                      className="p-4 sm:p-6 backdrop-blur-md bg-white/15 border border-white/30 rounded-lg hover:bg-white/25 hover:border-primary transition-all group block hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+                    >
+                    <h3 className="font-bold text-white text-sm sm:text-base group-hover:text-primary transition-colors line-clamp-2 mb-2">
                       {relatedProject.title}
                     </h3>
-                    <p className="text-sm text-white/70 mb-3 group-hover:text-white/90 transition-colors">
+                    <p className="text-xs sm:text-sm text-white mb-3 group-hover:text-white transition-colors">
                       {relatedProject.company}
                     </p>
-                    <p className="text-primary font-semibold text-sm group-hover:translate-x-2 transition-transform group-hover:text-orange-300">
+                    <p className="text-primary font-semibold text-xs sm:text-sm group-hover:translate-x-2 transition-transform group-hover:text-orange-300">
                       View Project →
                     </p>
-                  </Link>
+                    </Link>
+                  </motion.div>
                 ))}
-            </div>
+            </motion.div>
           </section>
         </article>
       </div>
