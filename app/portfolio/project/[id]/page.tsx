@@ -545,7 +545,7 @@ export default function ProjectDetail() {
               {projects
                 .filter((p) => p.id !== projectId)
                 .slice(0, 3)
-                .map((relatedProject, index) => (
+                .map((relatedProject) => (
                   <motion.div
                     key={relatedProject.id}
                     variants={{

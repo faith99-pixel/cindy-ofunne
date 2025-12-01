@@ -198,7 +198,7 @@ export default function Portfolio() {
               whileInView="show"
               viewport={{ once: true }}
             >
-              {filteredProjects.map((project, index) => (
+              {filteredProjects.map((project) => (
                 <motion.div
                   key={project.id}
                   variants={{
