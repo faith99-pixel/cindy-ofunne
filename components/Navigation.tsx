@@ -110,7 +110,7 @@ export default function Navigation() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block px-6 py-4 rounded-lg transition-all duration-300 font-bold text-3xl ${
+                  className={`block px-6 py-4 rounded-lg transition-all duration-300 font-bold text-xl ${
                     pathname === item.href
                       ? "bg-primary/10 text-primary"
                       : "text-secondary hover:bg-gray-100"
