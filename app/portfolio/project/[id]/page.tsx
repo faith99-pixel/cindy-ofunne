@@ -69,10 +69,10 @@ const projects: Project[] = [
     ],
     methodologies: ["Strategic Planning", "Agile", "Risk Management"],
     results: [
-      "Successfully deployed across entire organization with zero critical incidents",
-      "Achieved 99.8% system uptime in first quarter",
+      "Zero Critical Incidents: Successfully deployed across entire organization",
+      "System Availability: 99.8% in first quarter",
       "Training completion rate: 100% within 6 weeks",
-      "ROI achieved 3 months ahead of projections",
+      "Return on Investment: 3 months ahead of schedule",
     ],
   },
   {
@@ -117,9 +117,9 @@ const projects: Project[] = [
     methodologies: ["Change Management", "Waterfall", "Quality Assurance"],
     results: [
       "3,000 employees onboarded without operational disruption",
-      "Payroll accuracy improved to 99.97%",
-      "Self-service capabilities reduced HR ticket volume by 40%",
-      "Employee satisfaction with new system: 92%",
+      "Payroll accuracy: 99.97% post-implementation",
+      "HR ticket volume: Reduced by 40% via self-service",
+      "Employee satisfaction: 92% adoption rate",
     ],
   },
   {
@@ -163,10 +163,10 @@ const projects: Project[] = [
     ],
     methodologies: ["Portfolio Management", "Risk Management", "Leadership"],
     results: [
-      "All programs delivered on schedule and within budget",
-      "Stakeholder satisfaction increased from 72% to 89%",
-      "Program visibility dashboards adopted company-wide",
-      "3 junior PMs advanced to senior roles",
+      "On-time delivery: 100% of programs within budget",
+      "Stakeholder satisfaction: Increased from 72% to 89%",
+      "Program visibility: Dashboards adopted company-wide",
+      "Talent advancement: 3 junior PMs promoted to senior roles",
     ],
   },
   {
@@ -214,10 +214,10 @@ const projects: Project[] = [
       "Integration Testing",
     ],
     results: [
-      "Cloud infrastructure cost reduced by 28%",
-      "System uptime improved from 94% to 99.5%",
-      "E-EVIDS Phase 1 supporting 1.8M annual passengers",
-      "Team retention during migration: 96%",
+      "Infrastructure costs: Decreased by 28%",
+      "Operational uptime: Increased from 94% to 99.5%",
+      "E-EVIDS Phase 1: Supporting 1.8M annual passengers",
+      "Team retention: 96% during migration",
     ],
   },
   {
@@ -261,10 +261,10 @@ const projects: Project[] = [
     ],
     methodologies: ["Financial Management", "Process Improvement"],
     results: [
-      "Capital expenditure variance reduced from 12% to 3.2%",
-      "Average project delivery time improved by 15%",
-      "Vendor cost optimization: 8% savings achieved",
-      "Project documentation standardization: 100% compliance",
+      "Budget variance: Reduced from 12% to 3.2%",
+      "Project velocity: Improved by 15%",
+      "Vendor optimization: 8% cost savings",
+      "Documentation compliance: 100% standardization",
     ],
   },
   {
@@ -308,10 +308,10 @@ const projects: Project[] = [
     ],
     methodologies: ["Team Leadership", "Process Development", "Automation"],
     results: [
-      "NOC handled 50,000+ incidents annually with 85% first-contact resolution",
-      "System uptime across portfolio: 99.2%",
-      "Employee retention rate: 89% (industry average: 65%)",
-      "Cost per incident managed: 32% reduction",
+      "Incident handling: 50,000+ annually at 85% resolution",
+      "Portfolio availability: 99.2% uptime",
+      "Retention rate: 89% (vs 65% industry average)",
+      "Cost efficiency: 32% reduction per incident",
     ],
   },
 ];
@@ -440,13 +440,13 @@ export default function ProjectDetail() {
                   >
                     <div className="w-full p-6 backdrop-blur-md bg-white/15 border rounded-xl border-white/30 shadow-lg shadow-primary/20 hover:bg-white/25 hover:border-primary transition-all duration-300"
                     >
-                    <h3 className="text-primary font-bold text-sm sm:text-base mb-3 tracking-wider transition-colors duration-300">
+                    {/* <h3 className="text-primary font-bold text-sm sm:text-base mb-3 tracking-wider transition-colors duration-300">
                       {metric.split(/(\d+(?:,\d{3})*(?:\.\d+)?%?)/)[0]?.trim()}
-                    </h3>
-                    <p className="text-xl sm:text-2xl font-bold text-white mb-3 transform transition-transform duration-300">
+                    </h3> */}
+                    <p className="text-xl sm:text-2xl font-bold text-primary mb-3 transform transition-transform duration-300">
                       {metric.match(/\d+(?:,\d{3})*(?:\.\d+)?%?/)?.[0] || metric}
                     </p>
-                    <p className="text-white text-base sm:text-base leading-relaxed  transition-colors duration-300">
+                    <p className="text-white text-lg sm:text-xl leading-relaxed  transition-colors duration-300">
                       {description || metric}
                     </p>
                     </div>
