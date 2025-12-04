@@ -28,13 +28,7 @@ export default function Navigation() {
   }, [pathname]);
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-         ? "bg-white/80 backdrop-blur-md shadow-lg"
-          : "bg-white/40 backdrop-blur-sm"
-      }`}
-    >
+    <nav className="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-4 sm:px-0 lg:px-0">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
