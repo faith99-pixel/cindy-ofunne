@@ -26,7 +26,7 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-lg"
+         ? "bg-white/80 backdrop-blur-md shadow-lg"
           : "bg-white/40 backdrop-blur-sm"
       }`}
     >
@@ -80,17 +80,17 @@ export default function Navigation() {
           >
             <div className="w-6 h-5 flex flex-col justify-between">
               <span
-                className={`h-0.5 bg-secondary group-hover:bg-primary transition-all duration-300 ${
+                className={`h-0.5 bg-primary group-hover:bg-primary transition-all duration-300 ${
                   isOpen ? "rotate-45 translate-y-2.5" : ""
                 }`}
               />
               <span
-                className={`h-0.5 bg-secondary group-hover:bg-primary transition-all duration-300 ${
+                className={`h-0.5 bg-primary group-hover:bg-primary transition-all duration-300 ${
                   isOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`h-0.5 bg-secondary group-hover:bg-primary transition-all duration-300 ${
+                className={`h-0.5 bg-primary group-hover:bg-primary transition-all duration-300 ${
                   isOpen ? "-rotate-45 -translate-y-2.5" : ""
                 }`}
               />
@@ -100,34 +100,49 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden fixed left-0 top-16 w-full h-[calc(100vh-64px)] bg-white backdrop-blur-lg border-t border-gray-200 flex flex-col p-6 animate-fade-in-up z-40">
-            <div className="space-y-4 flex-1">
+          <div className="md:hidden fixed left-0 top-16 w-full h-[calc(100vh-64px)] bg-gray-900 backdrop-blur-md border-t border-gray-700/50 flex flex-col pt-8 animate-fade-in-up z-40 shadow-lg">
+            <div className="space-y-1 flex-1">
               {[
-                { label: "About", href: "/" },
-                { label: "Projects", href: "/portfolio" },
+                { label: "About", href: "/"},
+                { label: "Projects", href: "/portfolio"},
                 { label: "Resume", href: "/resume" },
               ].map((item, index) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block px-6 py-4 rounded-lg transition-all duration-300 font-bold text-xl ${
+                  className={`block px-4 py-3 rounded-xl transition-all duration-300 font-medium text-xl group relative overflow-hidden ${
                     pathname === item.href
-                      ? "bg-primary/10 text-primary"
-                      : "text-secondary hover:bg-gray-100"
+                      ? "text-primary"
+                      : "text-white/90 hover:text-white"
                   }`}
                   style={{
-                    animation: `slideDown 0.4s ease-out ${index * 80}ms backwards`,
+                    animation: `slideDown 0.5s ease-out ${index * 100}ms backwards`,
                   }}
                 >
-                  {item.label}
+                  <span className="relative z-10 flex items-center gap-3">
+                    <span className={`text-lg transition-all duration-300 ${
+                      pathname === item.href 
+                        ? "scale-110" 
+                        : "group-hover:scale-110 group-hover:rotate-12"
+                    }`}>
+                      {/* {item.emoji} */}
+                    </span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">
+                      {item.label}
+                    </span>
+                    {pathname === item.href && (
+                      <span className="ml-auto text-primary">•</span>
+                    )}
+                  </span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </Link>
               ))}
             </div>
             <a
               href="mailto:cindyofunne@yahoo.com"
-              className="block w-full px-6 py-4 bg-gradient-to-r from-primary to-orange-600 text-white rounded-2xl font-semibold text-center hover:shadow-lg transition-all duration-300 mb-20"
+              className="block w-[90%] mx-auto px-6 py-4 bg-gradient-to-r from-primary to-orange-600 text-white rounded-2xl font-semibold text-center hover:shadow-lg transition-all duration-300 mb-24"
               style={{
-                animation: `slideDown 0.4s ease-out 240ms backwards`,
+                animation: `slideDown 0.4s ease-out 240ms backwards, breathing 2.5s ease-in-out 240ms infinite`,
               }}
             >
               Get in Touch
@@ -145,6 +160,16 @@ export default function Navigation() {
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+        @keyframes breathing {
+          0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.7);
+          }
+          50% {
+            transform: scale(1.02);
+            box-shadow: 0 0 0 8px rgba(255, 87, 34, 0);
           }
         }
       `}</style>

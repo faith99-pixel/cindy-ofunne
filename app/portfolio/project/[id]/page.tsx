@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface Project {
   id: number;
@@ -317,9 +318,14 @@ const projects: Project[] = [
 ];
 
 export default function ProjectDetail() {
+  const [mounted, setMounted] = useState(false);
   const params = useParams();
   const router = useRouter();
   const projectId = parseInt(params.id as string);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const project = projects.find((p) => p.id === projectId);
 
@@ -420,9 +426,9 @@ export default function ProjectDetail() {
                   },
                 },
               }}
-              initial="hidden"
-              whileInView="show"
-            viewport={{ once: true }}
+              initial={mounted ? "hidden" : "show"}
+              whileInView={mounted ? "show" : undefined}
+              viewport={{ once: true }}
             >
               {project.results.map((result, index) => {
                 // Parse results to extract metrics and descriptions
@@ -538,8 +544,8 @@ export default function ProjectDetail() {
                   },
                 },
               }}
-              initial="hidden"
-              whileInView="show"
+              initial={mounted ? "hidden" : "show"}
+              whileInView={mounted ? "show" : undefined}
               viewport={{ once: true }}
             >
               {projects
