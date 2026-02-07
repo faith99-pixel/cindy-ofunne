@@ -5,23 +5,13 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const pathname = usePathname();
+   const [isOpen, setIsOpen] = useState(false);
+   const [mounted, setMounted] = useState(false);
+   const pathname = usePathname();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+   useEffect(() => {
+     setMounted(true);
+   }, []);
 
   useEffect(() => {
     setIsOpen(false);
