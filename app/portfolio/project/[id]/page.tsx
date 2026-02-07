@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 interface Project {
   id: number;
