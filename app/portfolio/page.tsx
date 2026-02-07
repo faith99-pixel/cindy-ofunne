@@ -18,29 +18,31 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
-    id: 1,
-    title: "Portfolio Plus Infrastructure Upgrade & Enterprise Risk Management",
-    company: "Infrastructure Ontario",
-    period: "Sept 2024 - Nov 2025",
-    role: "Senior IT Project Manager",
-    tags: [
-      "Infrastructure",
-      "Risk Management",
-      "Enterprise Systems",
-      "Leadership",
-    ],
-    description:
-      "Led successful deployment of Portfolio Plus infrastructure upgrade, implementation of Enterprise Risk Management (GRC) tool, and ServiceNow platform across the organization. Coached a team of 6 project managers while implementing continuous learning initiatives.",
-    impact: [
-      "Enhanced QA process by 15%",
-      "Improved overall testing practices",
-      "Seamless system execution and alignment",
-      "Coached team of 6 project managers",
-    ],
-    methodologies: ["Strategic Planning", "Agile", "Risk Management"],
-    icon: "🏗️",
-  },
+   {
+     id: 1,
+     title: "Portfolio Plus Infrastructure Upgrade & Enterprise Risk Management",
+     company: "Infrastructure Ontario",
+     period: "Sept '24 – till date",
+     role: "Senior IT Project Manager (Digital Transformation)",
+     tags: [
+       "Infrastructure",
+       "Risk Management",
+       "Enterprise Systems",
+       "Leadership",
+       "Digital Transformation",
+     ],
+     description:
+       "Leading successful deployment of Portfolio Plus infrastructure upgrade, implementation of Enterprise Risk Management (GRC) tool, Salesforce CRM, Microsoft Places, Citrix Upgrade and ServiceNow platform. Providing executive oversight and strategic direction for enterprise-wide programs. Coaching a team of 6 project managers while implementing continuous learning initiatives.",
+     impact: [
+       "Enhanced QA process by 15%",
+       "Improved overall testing practices",
+       "Coached team of 6 project managers",
+       "Seamless execution and C-Suite executive support",
+       "Predictive analytics and financial forecasting",
+     ],
+     methodologies: ["Strategic Planning", "Agile", "Risk Management", "Leadership"],
+     icon: "🏗️",
+   },
   {
     id: 2,
     title: "HRIS Implementation - UKG (Ultimate Kronos Group)",
@@ -121,21 +123,58 @@ const projects: Project[] = [
     id: 6,
     title: "Network Operations Centre Setup & IT Remote Management Solutions",
     company: "American Tower Corporation",
-    period: "Apr 2015 - Sep 2021",
+    period: "Apr 2015 - Apr 2019",
     role: "Supervisor, Projects & NOC",
     tags: ["Network Operations", "Infrastructure", "Team Building", "Process"],
     description:
-      "Led team growth from startup to 100+ staff managing critical 24x7 environments. Implemented RMS projects across 4,752 live sites while developing IT policies and procedures. Achieved 85% success rate through efficient scheduling and stakeholder management.",
+      "Led team growth from startup to 100+ staff managing critical 24x7 environments. Implemented RMS projects across 4,752 live sites while developing IT policies and procedures. Achieved escalation management and incident handling across all portfolios.",
     impact: [
-      "Success rate increased from 50% to 85%",
       "Team scaled from 5 to 100+ members",
-      "55% vendor performance improvement",
-      "Automated theft incident reporting system",
+      "Implemented automated IT systems for change and incident management",
+      "Successfully led user adoption using ADKAR model",
+      "Managed critical projects for 24x7 operations",
     ],
-    methodologies: ["Team Leadership", "Process Development", "Automation"],
+    methodologies: ["Team Leadership", "Process Development", "Change Management (ADKAR)"],
     icon: "🌐",
   },
-];
+  {
+    id: 7,
+    title: "Regional IT Projects & Stakeholder Management Optimization",
+    company: "American Tower Corporation",
+    period: "Apr 2019 - Sep 2021",
+    role: "Regional Supervisor, Project",
+    tags: ["Project Management", "Infrastructure", "Automation", "Performance"],
+    description:
+      "Managed North IT projects achieving 85% success rate through efficient project scheduling and stakeholder management. Automated theft incident reporting and record management using ECM and CRM tools for security team.",
+    impact: [
+      "Success rate increased from 50% to 85%",
+      "55% improvement in vendor performance within 3 months",
+      "Automated theft incident reporting process",
+      "Increased team collaboration through centralized repository",
+    ],
+    methodologies: ["Performance Optimization", "Process Automation", "Data Analytics"],
+    icon: "📈",
+  },
+  {
+    id: 8,
+    title: "Nationwide IT Wireless Network, Solar & PSRN Projects",
+    company: "Zinox Group",
+    period: "Oct '11 – Apr '15",
+    role: "IT Project Manager",
+    tags: ["Wireless Networks", "PSRN", "Cost Optimization", "Strategic Leadership"],
+    description:
+      "Delivered six major IT wireless network, solar, and PSRN projects nationwide using a unique combination of project management methodologies. Collaborated with CTO to reduce implementation costs on five projects by refining the vendors list. Developed standardized processes, procedures, and work plans across all branches nationwide.",
+    impact: [
+      "Reduced implementation costs on 5 projects through vendor optimization",
+      "Delivered 6 major nationwide projects",
+      "Developed standardized processes and work documentation across all branches",
+      "Led strategic team to revamp Taskdirect subsidiary to Yudala before exit",
+      "Promoted after 6 months of employment for outstanding performance",
+    ],
+    methodologies: ["Multi-methodology PM", "Cost Management", "Vendor Optimization", "Strategic Planning"],
+    icon: "🚀",
+  },
+  ];
 
 export default function Portfolio() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);

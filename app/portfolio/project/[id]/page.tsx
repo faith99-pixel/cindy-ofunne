@@ -314,8 +314,103 @@ const projects: Project[] = [
       "Retention rate: 89% (vs 65% industry average)",
       "Cost efficiency: 32% reduction per incident",
     ],
-  },
-];
+    },
+    {
+    id: 7,
+    title: "Regional IT Projects & Stakeholder Management Optimization",
+    company: "American Tower Corporation",
+    period: "Apr '19 - Sep '21",
+    image: "/images/cindy_project.jpg",
+    tags: ["Project Management", "Infrastructure", "Automation", "Performance"],
+    description:
+      "Managed North IT projects achieving 85% success rate through efficient project scheduling and stakeholder management. Automated theft incident reporting and record management using ECM and CRM tools for security team.",
+    fullDescription:
+      "American Tower Corporation's North region faced critical project management challenges with inconsistent success rates, manual incident reporting processes creating bottlenecks, and vendor performance variability across multiple sites. The organization needed to improve project scheduling efficiency, automate incident management, and leverage data analytics to optimize vendor relationships and resource allocation.",
+    requirements: [
+      "Improve project success rate from 50% to 85%",
+      "Automate theft incident reporting and tracking",
+      "Establish centralized project repository",
+      "Implement vendor performance analytics",
+      "Optimize resource allocation across North region",
+    ],
+    challenges: [
+      "Improving success rate without additional resources",
+      "Automating manual incident reporting processes",
+      "Coordinating vendor performance improvement",
+      "Maintaining consistency across multiple project teams",
+    ],
+    approach:
+      "Performance Optimization through data analytics and process automation. Implemented ECM and CRM tools for incident management. Data-driven vendor performance tracking with scheduled reporting to leadership.",
+    solution: [
+      "Automated theft incident reporting and record management using ECM and CRM tools",
+      "Implemented data analytics for vendor performance tracking",
+      "Established centralized repository for North region projects",
+      "Created scheduled performance reports for top management",
+      "Optimized resource allocation based on analytics",
+    ],
+    impact: [
+      "Success rate increased from 50% to 85%",
+      "55% improvement in vendor performance within 3 months",
+      "Automated theft incident reporting process",
+      "Increased team collaboration through centralized repository",
+    ],
+    methodologies: ["Performance Optimization", "Process Automation", "Data Analytics"],
+    results: [
+      "Project success rate: 85% (from 50%)",
+      "Vendor performance: Improved 55% in 3 months",
+      "Incident processing: Automated reducing manual effort by 70%",
+      "Management reporting: Improved visibility and decision-making",
+    ],
+    },
+    {
+    id: 8,
+    title: "Nationwide IT Wireless Network, Solar & PSRN Projects",
+    company: "Zinox Group",
+    period: "Oct '11 – Apr '15",
+    image: "/images/cindy_1.jpg",
+    tags: ["Wireless Networks", "PSRN", "Cost Optimization", "Strategic Leadership"],
+    description:
+      "Delivered six major IT wireless network, solar, and PSRN projects nationwide using a unique combination of project management methodologies. Collaborated with CTO to reduce implementation costs on five projects by refining the vendors list. Developed standardized processes, procedures, and work plans across all branches nationwide.",
+    fullDescription:
+      "Zinox Group struggled to execute multiple complex IT projects across diverse verticals (wireless networks, solar, PSRN) while managing escalating implementation costs and inconsistent project delivery approaches. The organization faced vendor management inefficiencies, lacked standardized PM processes across branches, and needed strategic leadership to successfully execute the Task Direct subsidiary restructuring.",
+    requirements: [
+      "Deliver 6 major nationwide IT projects",
+      "Reduce implementation costs across projects",
+      "Establish standardized PM processes nationwide",
+      "Optimize vendor selection and management",
+      "Support strategic restructuring of Task Direct subsidiary",
+    ],
+    challenges: [
+      "Coordinating projects across diverse technology domains",
+      "Managing vendor relationships to reduce costs",
+      "Establishing standardized processes across multiple branches",
+      "Supporting major organizational restructuring",
+    ],
+    approach:
+      "Multi-methodology PM approach tailored to project types. Vendor optimization through CTO collaboration and refined vendors list. Process standardization and documentation framework across all branches. Strategic planning for Task Direct restructuring.",
+    solution: [
+      "Delivered 6 major nationwide projects using adapted PM methodologies",
+      "Collaborated with CTO to refine vendors list reducing costs",
+      "Reduced implementation costs on 5 of 6 projects",
+      "Developed standardized processes and work documentation",
+      "Led strategic team to revamp Task Direct subsidiary to Yudala",
+    ],
+    impact: [
+      "Reduced implementation costs on 5 projects through vendor optimization",
+      "Delivered 6 major nationwide projects",
+      "Developed standardized processes and work documentation across all branches",
+      "Led strategic team to revamp Task Direct subsidiary to Yudala before exit",
+      "Promoted after 6 months of employment for outstanding performance",
+    ],
+    methodologies: ["Multi-methodology PM", "Cost Management", "Vendor Optimization", "Strategic Planning"],
+    results: [
+      "Cost reduction: Successful on 5 of 6 projects",
+      "Project delivery: 100% nationwide on schedule",
+      "Process standardization: Adopted across all branches",
+      "Strategic outcome: Task Direct successfully restructured to Yudala",
+    ],
+    },
+    ];
 
 export default function ProjectDetail() {
   const [mounted, setMounted] = useState(false);
