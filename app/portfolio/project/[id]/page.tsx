@@ -516,8 +516,8 @@ export default function ProjectDetail() {
                   },
                 },
               }}
-              initial={mounted ? "hidden" : "show"}
-              whileInView={mounted ? "show" : undefined}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
             >
               {project.results.map((result, index) => {
@@ -527,13 +527,13 @@ export default function ProjectDetail() {
                 const description = parts[1]?.trim() || '';
 
                 return (
-                  <motion.div
-                    key={index}
-                    variants={{
-                      hidden: { opacity: 0, scale: 0.9 },
-                      show: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
-                    }}
-                  >
+                   <motion.div
+                     key={index}
+                     variants={{
+                       hidden: { opacity: 0, scale: 0.9 },
+                       show: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+                     }}
+                   >
                     <div className="w-full p-6 backdrop-blur-md bg-white/15 border rounded-xl border-white/30 shadow-lg shadow-primary/20 hover:bg-white/25 hover:border-primary transition-all duration-300"
                     >
                     {/* <h3 className="text-primary font-bold text-sm sm:text-base mb-3 tracking-wider transition-colors duration-300">
@@ -634,8 +634,8 @@ export default function ProjectDetail() {
                   },
                 },
               }}
-              initial={mounted ? "hidden" : "show"}
-              whileInView={mounted ? "show" : undefined}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
             >
               {projects
