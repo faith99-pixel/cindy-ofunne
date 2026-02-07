@@ -413,16 +413,11 @@ const projects: Project[] = [
     ];
 
 export default function ProjectDetail() {
-  const [mounted, setMounted] = useState(false);
-  const params = useParams();
-  const router = useRouter();
-  const projectId = parseInt(params.id as string);
+   const params = useParams();
+   const router = useRouter();
+   const projectId = parseInt(params.id as string);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const project = projects.find((p) => p.id === projectId);
+   const project = projects.find((p) => p.id === projectId);
 
   if (!project) {
     return (

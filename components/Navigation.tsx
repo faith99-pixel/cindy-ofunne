@@ -6,12 +6,7 @@ import { usePathname } from "next/navigation";
 
 export default function Navigation() {
    const [isOpen, setIsOpen] = useState(false);
-   const [mounted, setMounted] = useState(false);
    const pathname = usePathname();
-
-   useEffect(() => {
-     setMounted(true);
-   }, []);
 
   useEffect(() => {
     setIsOpen(false);
@@ -131,7 +126,7 @@ export default function Navigation() {
               href="mailto:cindyofunne@yahoo.com"
               className="block w-[90%] mx-auto px-6 py-4 bg-gradient-to-r from-primary to-orange-600 text-white rounded-2xl font-semibold text-center hover:shadow-lg transition-all duration-300 mb-24"
               style={{
-                animation: mounted ? `slideDown 0.4s ease-out 240ms backwards, breathing 2.5s ease-in-out 240ms infinite` : `slideDown 0.4s ease-out 240ms backwards`,
+                animation: `slideDown 0.4s ease-out 240ms backwards, breathing 2.5s ease-in-out 240ms infinite`,
               }}
             >
               Get in Touch
