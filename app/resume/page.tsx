@@ -72,7 +72,7 @@ export default function Resume() {
                             large scale and complex projects with a revenue of over CAD 1 billion with
                             teams of 50 to 200 across the Finance-technology, IT, Consulting, Aviation,
                             Telecommunications, Health verticals. A self-starter who thrives on challenges
-                            and champions' change. Adept at:
+                            and champions&apos; change. Adept at:
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {[
