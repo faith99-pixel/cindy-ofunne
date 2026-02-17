@@ -25,7 +25,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Cindy Ofunne - Strategic Leader & Program Delivery Director",
+  title: "Cindy Okosun - Strategic Leader & Program Delivery Director",
   description:
     "Senior-level strategic leader and IT program management professional with 15+ years of experience in digital transformation, project portfolio management, and enterprise-scale delivery.",
   keywords: [

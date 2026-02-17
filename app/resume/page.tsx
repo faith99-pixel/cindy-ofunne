@@ -34,7 +34,7 @@ export default function Resume() {
 
                     {/* Name & Title */}
                     <section className="mb-12 animate-fade-in-up">
-                        <h2 className="text-4xl font-bold text-white mb-2">CINDY OFUNNE</h2>
+                        <h2 className="text-4xl font-bold text-white mb-2">CINDY OKOSUN</h2>
                         <p className="text-xl text-primary font-semibold mb-6">
                             Senior-Level Strategic Leader | Director of Program Delivery
                         </p>

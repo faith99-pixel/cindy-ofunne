@@ -55,7 +55,7 @@ export default function PageLoader() {
             </div>
             
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-white mb-2">Cindy Ofunne</h2>
+              <h2 className="text-2xl font-bold text-white mb-2">Cindy Okosun</h2>
               <p className="text-primary text-sm tracking-widest uppercase">Loading Excellence</p>
               
               {/* Animated dots */}

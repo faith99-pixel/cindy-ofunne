@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-secondary font-bold text-sm">CO</span>
               </div>
-              <span className="font-bold">Cindy Ofunne</span>
+              <span className="font-bold">Cindy Okosun</span>
             </Link>
             <p className="text-gray-400">
               Strategic leader transforming complexity into clarity and results.
@@ -73,7 +73,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} Cindy Ofunne. All Rights Reserved. | Crafted with
+            &copy; {new Date().getFullYear()} Cindy Okosun. All Rights Reserved. | Crafted with
             precision and passion.
           </p>
         </div>
