@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import TypingAnimation from "@/components/TypingAnimation";
 
 export default function Home() {
     return (
@@ -26,10 +27,11 @@ export default function Home() {
                             </p>
 
                             <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 leading-tight text-white">
-                                Cindy{" "}
-                                <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
-                                    Okosun
-                                </span>
+                                <TypingAnimation
+                                    text="Cindy Okosun"
+                                    gradientSpan={true}
+                                    speed={100}
+                                />
                             </h1>
 
                             {/* Credentials Badge */}
