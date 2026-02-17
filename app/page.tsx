@@ -28,7 +28,7 @@ export default function Home() {
                             <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 leading-tight text-white">
                                 Cindy{" "}
                                 <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
-                                    Ofunne
+                                    Okosun
                                 </span>
                             </h1>
 
