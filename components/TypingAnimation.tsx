@@ -47,8 +47,12 @@ export default function TypingAnimation({
   const playTypingSound = () => {
     // Create a simple typing sound using Web Audio API
     try {
-      const audioContext = new (window.AudioContext ||
-        (window as any).webkitAudioContext)();
+      const AudioContextClass = (typeof window !== 'undefined' && 
+        (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)) || null;
+      
+      if (!AudioContextClass) return;
+      
+      const audioContext = new AudioContextClass();
       const now = audioContext.currentTime;
 
       // Create oscillator for the typing sound
@@ -70,7 +74,7 @@ export default function TypingAnimation({
 
       osc.start(now);
       osc.stop(now + 0.05);
-    } catch (error) {
+    } catch {
       // Silently fail if audio context is not available
       // This won't break the animation
     }
