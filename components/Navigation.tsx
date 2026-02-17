@@ -49,7 +49,7 @@ export default function Navigation() {
               </Link>
             ))}
             <a
-              href="mailto:cindyofunne@yahoo.com"
+              href="mailto:cindyokosun@yahoo.com"
               className="px-6 py-2 bg-gradient-to-r from-primary to-orange-600 text-white rounded-2xl hover:shadow-lg transition-all duration-300 font-medium hover:scale-105"
             >
               Get in Touch
@@ -123,7 +123,7 @@ export default function Navigation() {
               ))}
             </div>
             <a
-              href="mailto:cindyofunne@yahoo.com"
+              href="mailto:cindyokosun@yahoo.com"
               className="block w-[90%] mx-auto px-6 py-4 bg-gradient-to-r from-primary to-orange-600 text-white rounded-2xl font-semibold text-center hover:shadow-lg transition-all duration-300 mb-24"
               style={{
                 animation: `slideDown 0.4s ease-out 240ms backwards, breathing 2.5s ease-in-out 240ms infinite`,

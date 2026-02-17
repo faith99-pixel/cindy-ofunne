@@ -42,10 +42,10 @@ export default function Resume() {
                         {/* Contact Info */}
                         <div className="flex flex-wrap gap-4 text-white/90 mb-8">
                             <a
-                                href="mailto:cindyofunne@yahoo.com"
-                                className="hover:text-primary transition-colors"
+                              href="mailto:cindyokosun@yahoo.com"
+                              className="hover:text-primary transition-colors"
                             >
-                                cindyofunne@yahoo.com
+                              cindyokosun@yahoo.com
                             </a>
                             {/* <span>437-774-8847</span> */}
                             <span>Ontario, Canada</span>
@@ -475,10 +475,10 @@ export default function Resume() {
                             Ready to discuss how my experience can help your organization?
                         </p>
                         <a
-                            href="mailto:cindyofunne@yahoo.com?subject=Project Discussion"
-                            className="inline-block px-8 py-4 bg-primary text-white hover:bg-orange-600 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                          href="mailto:cindyokosun@yahoo.com?subject=Project Discussion"
+                          className="inline-block px-8 py-4 bg-primary text-white hover:bg-orange-600 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
                         >
-                            Schedule a Consultation
+                          Schedule a Consultation
                         </a>
                     </section>
                 </div>

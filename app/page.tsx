@@ -81,7 +81,7 @@ export default function Home() {
                                     </span>
                                 </Link>
                                 <a
-                                    href="mailto:cindyofunne@yahoo.com"
+                                    href="mailto:cindyokosun@yahoo.com"
                                     className="px-6 sm:px-10 py-3 sm:py-4 border-2 border-primary text-primary hover:bg-white hover:border-2 hover:border-white/50 hover:text-secondary rounded-2xl transition-all duration-300 font-semibold hover:scale-105 text-sm sm:text-base whitespace-nowrap"
                                 >
                                     Get in Touch
@@ -583,7 +583,7 @@ export default function Home() {
                             deliver excellence.
                         </p>
                         <a
-                            href="mailto:cindyofunne@yahoo.com"
+                            href="mailto:cindyokosun@yahoo.com"
                             className="inline-block px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 animate-fade-in-up"
                             style={{ animationDelay: "200ms" }}
                         >

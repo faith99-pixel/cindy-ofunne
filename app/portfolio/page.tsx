@@ -326,7 +326,7 @@ export default function Portfolio() {
               Let&rsquo;s discuss how my experience can help your organization succeed.
             </p>
             <a
-              href="mailto:cindyofunne@yahoo.com"
+              href="mailto:cindyokosun@yahoo.com"
               className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 animate-fade-in-up"
               style={{ animationDelay: "200ms" }}
             >

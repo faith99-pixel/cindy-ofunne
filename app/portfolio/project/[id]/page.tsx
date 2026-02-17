@@ -626,7 +626,7 @@ export default function ProjectDetail() {
               I&apos;d love to explore how my experience can help with your organization&apos;s transformation goals.
             </p>
             <a
-              href="mailto:cindyofunne@yahoo.com?subject=Project Discussion"
+              href="mailto:cindyokosun@yahoo.com?subject=Project Discussion"
               className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white text-sm sm:text-base hover:bg-orange-600 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/50 animate-float"
             >
               Schedule a Consultation

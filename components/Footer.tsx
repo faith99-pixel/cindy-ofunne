@@ -52,15 +52,15 @@ export default function Footer() {
             <div className="space-y-2 text-gray-400">
               <p>
                 <a
-                  href="mailto:cindyofunne@yahoo.com"
+                  href="mailto:cindyokosun@yahoo.com"
                   className="hover:text-primary transition-colors"
                 >
-                  cindyofunne@yahoo.com
+                  cindyokosun@yahoo.com
                 </a>
               </p>
               {/* <p className="text-gray-400">437-774-8847</p> */}
               <a
-                href="https://linkedin.com/in/cindyofunne"
+                href="https://linkedin.com/in/cindyokosun"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block hover:text-primary transition-colors"

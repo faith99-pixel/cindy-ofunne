@@ -137,7 +137,7 @@ export default function ProjectModal({
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-gray-200">
               <a
-                href="mailto:cindyofunne@yahoo.com?subject=Project Discussion"
+                href="mailto:cindyokosun@yahoo.com?subject=Project Discussion"
                 className="flex-1 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors text-center"
               >
                 Discuss This Project
