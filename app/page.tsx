@@ -31,6 +31,7 @@ export default function Home() {
                                     text="Cindy Okosun"
                                     gradientSpan={true}
                                     speed={100}
+                                    sound={false}
                                 />
                             </h1>
 
@@ -46,7 +47,7 @@ export default function Home() {
                                 <TypingAnimation
                                     text="Highly accomplished professional specializing in strategic IT portfolio and project leadership, STEAM education advocacy, and transformational business coaching."
                                     sound={false}
-                                    speed={30}
+                                    speed={40}
                                 />
                             </p>
 
