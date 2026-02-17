@@ -43,7 +43,11 @@ export default function Home() {
                             </div>
 
                             <p className="text-lg sm:text-xl lg:text-2xl text-white mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto">
-                                Highly accomplished professional specializing in strategic IT portfolio and project leadership, STEAM education advocacy, and transformational business coaching.
+                                <TypingAnimation
+                                    text="Highly accomplished professional specializing in strategic IT portfolio and project leadership, STEAM education advocacy, and transformational business coaching."
+                                    sound={false}
+                                    speed={30}
+                                />
                             </p>
 
                             {/* Quick Stats - Responsive Grid */}

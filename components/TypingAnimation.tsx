@@ -7,6 +7,7 @@ interface TypingAnimationProps {
   className?: string;
   gradientSpan?: boolean;
   speed?: number;
+  sound?: boolean;
   onComplete?: () => void;
 }
 
@@ -15,6 +16,7 @@ export default function TypingAnimation({
   className = "",
   gradientSpan = false,
   speed = 80,
+  sound = true,
   onComplete,
 }: TypingAnimationProps) {
   const [displayedText, setDisplayedText] = useState("");
@@ -25,8 +27,10 @@ export default function TypingAnimation({
     const timer = setInterval(() => {
       if (index < text.length) {
         setDisplayedText(text.slice(0, index + 1));
-        // Play typing sound
-        playTypingSound();
+        // Play typing sound only if enabled
+        if (sound) {
+          playTypingSound();
+        }
         index++;
       } else {
         setIsComplete(true);
