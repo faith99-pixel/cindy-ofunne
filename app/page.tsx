@@ -194,16 +194,12 @@ export default function Home() {
                             transition={{ duration: 0.6 }}
                         >
                             <h3 className="text-2xl sm:text-4xl font-bold text-primary mb-6 animate-slide-up">🎓 Professional Certifications</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                                 {[
                                     "PMP®",
-                                    "Portfolio Management Professional (PfMP) 2026",
-                                    "Scrum Master Certified",
-                                    "ITIL Foundation",
-                                    "Lean Six Sigma Black Belt",
-                                    "Google Cybersecurity",
-                                    "Microsoft Azure Fundamentals",
-                                    "Agile Release Train Engineering",
+                                    "Scrum Certified Master",
+                                    "ITIL Certified",
+                                    "PMI-CPMAI",
                                 ].map((cert, index) => (
                                     <div
                                         key={index}
@@ -212,7 +208,7 @@ export default function Home() {
                                             animationDelay: `${(index + 1) * 50}ms`,
                                         }}
                                     >
-                                        <p className="font-semibold text-secondary text-sm">{cert}</p>
+                                        <p className="font-semibold text-secondary">{cert}</p>
                                     </div>
                                 ))}
                             </div>
